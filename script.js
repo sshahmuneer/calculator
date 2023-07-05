@@ -34,7 +34,10 @@ function operate(operator, firstNumber, secondNumber) {
 
 const display = document.getElementById("display");
 const numberButtonZero = document.getElementById("0");
+
 numberButtonZero.addEventListener("click", (event) => {
-    const zero = document.createTextNode("0");
-    display.appendChild(zero);
+    if (display.childNodes.length < 9) {
+        const zero = document.createTextNode("0");
+        display.appendChild(zero);
+    }
 });
