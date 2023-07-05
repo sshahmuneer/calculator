@@ -43,6 +43,10 @@ const numberButtonSix = document.getElementById("6");
 const numberButtonSeven = document.getElementById("7");
 const numberButtonEight = document.getElementById("8");
 const numberButtonNine = document.getElementById("9");
+const addButton = document.getElementById("+");
+
+let firstNumber;
+let operatorChosen;
 
 numberButtonZero.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
@@ -111,5 +115,12 @@ numberButtonNine.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
         const nine = document.createTextNode("9");
         display.appendChild(nine);
+    }
+});
+
+addButton.addEventListener("click", (event) => {
+    if (display.childNodes.length > 0) {
+        firstNumber = display.textContent;
+        operatorChosen = "+";
     }
 });
