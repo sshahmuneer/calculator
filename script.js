@@ -31,3 +31,10 @@ function operate(operator, firstNumber, secondNumber) {
         default:
     }
 }
+
+const display = document.getElementById("display");
+const numberButtonZero = document.getElementById("0");
+numberButtonZero.addEventListener("click", (event) => {
+    const zero = document.createTextNode("0");
+    display.appendChild(zero);
+});
