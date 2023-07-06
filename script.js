@@ -33,16 +33,7 @@ function operate(operator, firstNumber, secondNumber) {
 }
 
 const display = document.getElementById("display");
-const numberButtonZero = document.getElementById("0");
-const numberButtonOne = document.getElementById("1");
-const numberButtonTwo = document.getElementById("2");
-const numberButtonThree = document.getElementById("3");
-const numberButtonFour = document.getElementById("4");
-const numberButtonFive = document.getElementById("5");
-const numberButtonSix = document.getElementById("6");
-const numberButtonSeven = document.getElementById("7");
-const numberButtonEight = document.getElementById("8");
-const numberButtonNine = document.getElementById("9");
+const numberButtons = document.querySelectorAll(".number-button");
 const addButton = document.getElementById("+");
 const equalsButton = document.getElementById("=");
 
@@ -51,108 +42,23 @@ let secondInput;
 let operatorChosen;
 let solution;
 
-numberButtonZero.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9 && display.textContent !== "0") {
-        const zero = document.createTextNode("0");
-        display.appendChild(zero);
-    }
-});
-
-numberButtonOne.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
+numberButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        if (solution != null) {
+            solution = null;
+            display.textContent = "";
+        }
         if (display.textContent === "0") {
             display.textContent = "";
         }
-        const one = document.createTextNode("1");
-        display.appendChild(one);
-    }
+        if (display.textContent.length < 9) {
+            display.appendChild(document.createTextNode(event.target.id));
+        }
+    });
 });
 
-numberButtonTwo.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
             display.textContent = "";
         }
-        const two = document.createTextNode("2");
-        display.appendChild(two);
-    }
-});
-
-numberButtonThree.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const three = document.createTextNode("3");
-        display.appendChild(three);
-    }
-});
-
-numberButtonFour.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const four = document.createTextNode("4");
-        display.appendChild(four);
-    }
-});
-
-numberButtonFive.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const five = document.createTextNode("5");
-        display.appendChild(five);
-    }
-});
-
-numberButtonSix.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const six = document.createTextNode("6");
-        display.appendChild(six);
-    }
-});
-
-numberButtonSeven.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const seven = document.createTextNode("7");
-        display.appendChild(seven);
-    }
-});
-
-numberButtonEight.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const eight = document.createTextNode("8");
-        display.appendChild(eight);
-    }
-});
-
-numberButtonNine.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
-        if (display.textContent === "0") {
-            display.textContent = "";
-        }
-        const nine = document.createTextNode("9");
-        display.appendChild(nine);
-    }
-});
-
-addButton.addEventListener("click", (event) => {
-    if (display.childNodes.length > 0) {
-        firstInput = display.textContent;
-        operatorChosen = "+";
-        display.textContent = "";
     }
 });
 
