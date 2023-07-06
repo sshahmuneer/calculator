@@ -17,17 +17,17 @@ function divide(a, b) {
 function operate(operator, firstNumber, secondNumber) {
     switch(operator) {
         case '+':
-            add(firstNumber, secondNumber);
-            break;
+            return add(firstNumber, secondNumber);
+            // break;
         case '-':
-            subtract(firstNumber, secondNumber);
-            break;
+            return subtract(firstNumber, secondNumber);
+            // break;
         case '*':
-            multiply(firstNumber, secondNumber);
-            break;
+            return multiply(firstNumber, secondNumber);
+            // break;
         case '/':
-            divide(firstNumber, secondNumber);
-            break;
+            return divide(firstNumber, secondNumber);
+            // break;
         default:
     }
 }
@@ -44,9 +44,12 @@ const numberButtonSeven = document.getElementById("7");
 const numberButtonEight = document.getElementById("8");
 const numberButtonNine = document.getElementById("9");
 const addButton = document.getElementById("+");
+const equalsButton = document.getElementById("=");
 
-let firstNumber;
+let firstInput;
+let secondInput;
 let operatorChosen;
+let solution;
 
 numberButtonZero.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
@@ -120,7 +123,16 @@ numberButtonNine.addEventListener("click", (event) => {
 
 addButton.addEventListener("click", (event) => {
     if (display.childNodes.length > 0) {
-        firstNumber = display.textContent;
+        firstInput = display.textContent;
         operatorChosen = "+";
+        display.textContent = "";
+    }
+});
+
+equalsButton.addEventListener("click", (event) => {
+    if (display.textContent.length > 0) {
+        secondInput = display.textContent;
+        solution = operate(operatorChosen, +firstInput, +secondInput);
+        display.textContent = solution;
     }
 });
