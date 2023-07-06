@@ -52,7 +52,7 @@ let operatorChosen;
 let solution;
 
 numberButtonZero.addEventListener("click", (event) => {
-    if (display.childNodes.length < 9) {
+    if (display.childNodes.length < 9 && display.textContent !== "0") {
         const zero = document.createTextNode("0");
         display.appendChild(zero);
     }
@@ -60,6 +60,9 @@ numberButtonZero.addEventListener("click", (event) => {
 
 numberButtonOne.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const one = document.createTextNode("1");
         display.appendChild(one);
     }
@@ -67,6 +70,9 @@ numberButtonOne.addEventListener("click", (event) => {
 
 numberButtonTwo.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const two = document.createTextNode("2");
         display.appendChild(two);
     }
@@ -74,6 +80,9 @@ numberButtonTwo.addEventListener("click", (event) => {
 
 numberButtonThree.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const three = document.createTextNode("3");
         display.appendChild(three);
     }
@@ -81,6 +90,9 @@ numberButtonThree.addEventListener("click", (event) => {
 
 numberButtonFour.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const four = document.createTextNode("4");
         display.appendChild(four);
     }
@@ -88,6 +100,9 @@ numberButtonFour.addEventListener("click", (event) => {
 
 numberButtonFive.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const five = document.createTextNode("5");
         display.appendChild(five);
     }
@@ -95,6 +110,9 @@ numberButtonFive.addEventListener("click", (event) => {
 
 numberButtonSix.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const six = document.createTextNode("6");
         display.appendChild(six);
     }
@@ -102,6 +120,9 @@ numberButtonSix.addEventListener("click", (event) => {
 
 numberButtonSeven.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const seven = document.createTextNode("7");
         display.appendChild(seven);
     }
@@ -109,6 +130,9 @@ numberButtonSeven.addEventListener("click", (event) => {
 
 numberButtonEight.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const eight = document.createTextNode("8");
         display.appendChild(eight);
     }
@@ -116,6 +140,9 @@ numberButtonEight.addEventListener("click", (event) => {
 
 numberButtonNine.addEventListener("click", (event) => {
     if (display.childNodes.length < 9) {
+        if (display.textContent === "0") {
+            display.textContent = "";
+        }
         const nine = document.createTextNode("9");
         display.appendChild(nine);
     }
