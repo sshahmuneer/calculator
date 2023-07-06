@@ -57,6 +57,16 @@ numberButtons.forEach((button) => {
     });
 });
 
+addButton.addEventListener("click", (event) => {
+    if (display.textContent.length > 0) {
+        if (firstInput != null) {
+            secondInput = display.textContent;
+            solution = operate("+", +firstInput, +secondInput);
+            display.textContent = solution;
+            firstInput = solution;
+        } else {
+            firstInput = display.textContent;
+            operatorChosen = "+";
             display.textContent = "";
         }
     }
