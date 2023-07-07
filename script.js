@@ -34,6 +34,7 @@ function operate(operator, firstNumber, secondNumber) {
 
 const display = document.getElementById("display");
 const numberButtons = document.querySelectorAll(".number-button");
+const operatorButtons = document.querySelectorAll(".operator-button");
 const addButton = document.getElementById("+");
 const equalsButton = document.getElementById("=");
 
@@ -57,20 +58,37 @@ numberButtons.forEach((button) => {
     });
 });
 
-addButton.addEventListener("click", (event) => {
-    if (display.textContent.length > 0) {
-        if (firstInput != null) {
-            secondInput = display.textContent;
-            solution = operate("+", +firstInput, +secondInput);
-            display.textContent = solution;
-            firstInput = solution;
-        } else {
-            firstInput = display.textContent;
-            operatorChosen = "+";
-            display.textContent = "";
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        if (display.textContent.length > 0) {
+            if (firstInput != null) {
+                secondInput = display.textContent;
+                solution = operate(event.target.id, +firstInput, +secondInput);
+                display.textContent = solution;
+                firstInput = solution;
+            } else {
+                firstInput = display.textContent;
+                operatorChosen = event.target.id;
+                display.textContent = "";
+            }
         }
-    }
+    });
 });
+
+// addButton.addEventListener("click", (event) => {
+//     if (display.textContent.length > 0) {
+//         if (firstInput != null) {
+//             secondInput = display.textContent;
+//             solution = operate("+", +firstInput, +secondInput);
+//             display.textContent = solution;
+//             firstInput = solution;
+//         } else {
+//             firstInput = display.textContent;
+//             operatorChosen = "+";
+//             display.textContent = "";
+//         }
+//     }
+// });
 
 equalsButton.addEventListener("click", (event) => {
     if (display.textContent.length > 0) {
