@@ -111,5 +111,5 @@ clearButton.addEventListener("click", (event) => {
     secondInput = null;
     operatorChosen = null;
     solution = null;
-    display.textContent = "";
+    display.textContent = "0";
 });
