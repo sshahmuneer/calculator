@@ -51,10 +51,12 @@ numberButtons.forEach((button) => {
             clearFirstInputFromScreen = false;
             display.textContent = "";
         }
-        if (display.textContent === "0") {
+        if (display.textContent === "0" && event.target.id !== "decimal") {
             display.textContent = "";
         }
-        if (display.textContent.length < 9) {
+        if (event.target.id === "decimal" && display.textContent.length < 9 && !display.textContent.includes(".")) {
+            display.appendChild(document.createTextNode(event.target.textContent));
+        } else if (event.target.id !== "decimal" && display.textContent.length < 9) {
             display.appendChild(document.createTextNode(event.target.id));
         }
     });
