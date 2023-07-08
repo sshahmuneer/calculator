@@ -30,16 +30,12 @@ function operate(operator, firstNumber, secondNumber) {
     switch(operator) {
         case '+':
             return add(firstNumber, secondNumber);
-            // break;
         case '-':
             return subtract(firstNumber, secondNumber);
-            // break;
         case '*':
             return multiply(firstNumber, secondNumber);
-            // break;
         case '/':
             return divide(firstNumber, secondNumber);
-            // break;
         default:
     }
 }
@@ -68,8 +64,10 @@ operatorButtons.forEach((button) => {
         if (display.textContent.length > 0) {
             if (firstInput != null) {
                 secondInput = display.textContent;
-                // operatorChosen = event.target.id;
                 solution = operate(operatorChosen, +firstInput, +secondInput);
+                if (solution.toString().length > 9) {
+                    solution = +solution.toPrecision(9);
+                }
                 display.textContent = solution;
                 firstInput = solution;
                 secondInput = null;
@@ -77,7 +75,6 @@ operatorButtons.forEach((button) => {
             } else {
                 firstInput = display.textContent;
                 operatorChosen = event.target.id;
-                // display.textContent = "";
                 clearFirstInputFromScreen = true;
             }
         }
@@ -88,9 +85,12 @@ equalsButton.addEventListener("click", (event) => {
     if (display.textContent.length > 0 && firstInput != null && operatorChosen != null) {
         secondInput = display.textContent;
         solution = operate(operatorChosen, +firstInput, +secondInput);
+        if (solution.toString().length > 9) {
+            solution = +solution.toPrecision(9);
+        }
         display.textContent = solution;
-        // firstInput = solution;
         firstInput = null;
+        secondInput = null;
         operatorChosen = null;
     }
 });
