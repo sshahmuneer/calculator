@@ -65,9 +65,13 @@ operatorButtons.forEach((button) => {
         if (display.textContent.length > 0) {
             if (firstInput != null) {
                 secondInput = display.textContent;
-                solution = operate(operatorChosen, +firstInput, +secondInput);
-                if (solution.toString().length > 9) {
-                    solution = +solution.toPrecision(9);
+                if (secondInput === "0" && operatorChosen === "/") {
+                    solution = "undefined: divide by zero";
+                } else {
+                    solution = operate(operatorChosen, +firstInput, +secondInput);
+                    if (solution.toString().length > 9) {
+                        solution = +solution.toPrecision(9);
+                    }
                 }
                 display.textContent = solution;
                 firstInput = solution;
@@ -85,9 +89,13 @@ operatorButtons.forEach((button) => {
 equalsButton.addEventListener("click", (event) => {
     if (display.textContent.length > 0 && firstInput != null && operatorChosen != null) {
         secondInput = display.textContent;
-        solution = operate(operatorChosen, +firstInput, +secondInput);
-        if (solution.toString().length > 9) {
-            solution = +solution.toPrecision(9);
+        if (secondInput === "0" && operatorChosen === "/") {
+            solution = "undefined: divide by zero";
+        } else {
+            solution = operate(operatorChosen, +firstInput, +secondInput);
+            if (solution.toString().length > 9) {
+                solution = +solution.toPrecision(9);
+            }
         }
         display.textContent = solution;
         firstInput = null;
