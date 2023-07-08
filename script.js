@@ -3,6 +3,7 @@ const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const addButton = document.getElementById("+");
 const equalsButton = document.getElementById("=");
+const clearButton = document.getElementById("clear");
 
 let firstInput;
 let secondInput;
@@ -93,4 +94,12 @@ equalsButton.addEventListener("click", (event) => {
         secondInput = null;
         operatorChosen = null;
     }
+});
+
+clearButton.addEventListener("click", (event) => {
+    firstInput = null;
+    secondInput = null;
+    operatorChosen = null;
+    solution = null;
+    display.textContent = "";
 });
