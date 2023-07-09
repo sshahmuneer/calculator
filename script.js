@@ -125,6 +125,11 @@ deleteButton.addEventListener("click", (event) => {
 
 calculator.addEventListener("keydown", (event) => {
     if (event.key >= "0" && event.key <= "9") {
-        numberButtons[+event.key].click();
+        // numberButtons[+event.key].click();
+        document.getElementById(event.key).click();
+    } else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
+        document.getElementById(event.key).click();
+    } else if (event.key === ".") {
+        document.getElementById("decimal").click();
     }
 });
