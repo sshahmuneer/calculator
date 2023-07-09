@@ -1,7 +1,7 @@
 const display = document.getElementById("display");
+const calculator = document.getElementById("calculator");
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
-const addButton = document.getElementById("+");
 const equalsButton = document.getElementById("=");
 const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
@@ -120,5 +120,11 @@ deleteButton.addEventListener("click", (event) => {
         display.textContent = display.textContent.slice(0, -1);
     } else {
         display.textContent = "0";
+    }
+});
+
+calculator.addEventListener("keydown", (event) => {
+    if (event.key >= "0" && event.key <= "9") {
+        numberButtons[+event.key].click();
     }
 });
