@@ -4,6 +4,7 @@ const operatorButtons = document.querySelectorAll(".operator-button");
 const addButton = document.getElementById("+");
 const equalsButton = document.getElementById("=");
 const clearButton = document.getElementById("clear");
+const deleteButton = document.getElementById("delete");
 
 let firstInput;
 let secondInput;
@@ -112,4 +113,12 @@ clearButton.addEventListener("click", (event) => {
     operatorChosen = null;
     solution = null;
     display.textContent = "0";
+});
+
+deleteButton.addEventListener("click", (event) => {
+    if (display.textContent.length > 1) {
+        display.textContent = display.textContent.slice(0, -1);
+    } else {
+        display.textContent = "0";
+    }
 });
