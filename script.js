@@ -130,5 +130,7 @@ calculator.addEventListener("keydown", (event) => {
         document.getElementById("decimal").click();
     } else if (event.key === "Backspace") {
         deleteButton.click();
+    } else if (event.key === "Escape") {
+        clearButton.click();
     }
 });
