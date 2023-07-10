@@ -8,6 +8,7 @@
     /* align-items: center; */
     width: 400px;
     height: 600px;
+    margin: auto;
 }
 
 #display {
@@ -15,6 +16,7 @@
     border-color: aquamarine;
     border-width: 5px;
     font-family: 'Orbitron', sans-serif;
+    text-align: right;
 }
 
 .number-and-operator-buttons {
