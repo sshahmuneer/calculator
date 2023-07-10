@@ -73,11 +73,11 @@ operatorButtons.forEach((button) => {
                 } else {
                     solution = operate(operatorChosen, +firstInput, +secondInput);
                     if (solution.toString().length > 9) {
-                        solution = +solution.toPrecision(9);
+                        solution = solution.toPrecision(9);
                     }
                 }
                 display.textContent = solution;
-                firstInput = solution;
+                firstInput = +solution;
                 secondInput = null;
                 operatorChosen = event.target.id;
             } else {
@@ -97,7 +97,7 @@ equalsButton.addEventListener("click", (event) => {
         } else {
             solution = operate(operatorChosen, +firstInput, +secondInput);
             if (solution.toString().length > 9) {
-                solution = +solution.toPrecision(9);
+                solution = solution.toPrecision(9);
             }
         }
         display.textContent = solution;
