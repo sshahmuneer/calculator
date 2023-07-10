@@ -132,5 +132,8 @@ calculator.addEventListener("keydown", (event) => {
         deleteButton.click();
     } else if (event.key === "Escape") {
         clearButton.click();
+    } else if (event.key === "Enter") {
+        event.preventDefault();
+        equalsButton.click();
     }
 });
