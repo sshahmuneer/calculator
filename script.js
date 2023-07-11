@@ -1,5 +1,4 @@
 const display = document.getElementById("display");
-const calculator = document.getElementById("calculator");
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const equalsButton = document.getElementById("=");
