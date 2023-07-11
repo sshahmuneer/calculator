@@ -123,7 +123,7 @@ deleteButton.addEventListener("click", (event) => {
     }
 });
 
-calculator.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", (event) => {
     if ((event.key >= "0" && event.key <= "9") || event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/" || event.key === "=") {
         document.getElementById(event.key).click();
     } else if (event.key === ".") {
