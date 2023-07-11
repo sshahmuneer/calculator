@@ -10,9 +10,7 @@ body {
     background-color: #aaaaaa;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
-    /* align-items: center; */
     width: 400px;
     height: 500px;
     margin: auto;
@@ -26,89 +24,52 @@ body {
     border-radius: 8px;
     background-color: #eeeeee;
     font-family: 'Orbitron', sans-serif;
-    text-align: right;
-    height: 100px;
     font-size: 37px;
     overflow-wrap: break-word;
+    text-align: right;
+    height: 100px;
 }
 
 button {
-    border-radius: 8px;
     font-size: 20px;
     color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 25px 32px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
-.number-and-operator-buttons {
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 1;
+}
+
+.number-and-operator-buttons, .clear-and-delete-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 4px;
 }
 
 .number-and-operator-buttons > button{
-    /* color: aqua; */
-    /* flex: 0 0 24%; */
-    /* flex: 0 0 24%; */
     flex: 0 0 97px;
-    border-style: solid;
-    border-width: 1px;
-    /* color: white; */
-    /* color: black; */
-    padding: 25px 32px;
-    /* text-align: center; */
-    /* text-decoration: none; */
-    /* font-size: 16px; */
-    /* margin: 4px 2px; */
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
-
-}
-
-.number-and-operator-buttons > button:hover {
-    opacity: 0.9;
-}
-
-.number-and-operator-buttons > button:active {
-    opacity: 1;
-}
-
-.number-button {
-    /* background-color: #008CBA; */
-    background-color: #eeeeee;
-}
-
-.operator-button {
-    background-color: #217C7E;
-}
-
-#\= {
-    background-color: #217C7E;
-}
-
-.clear-and-delete-buttons {
-    display: flex;
-    gap: 4px 4px;
 }
 
 .clear-and-delete-buttons > button{
     flex: 0 0 198px;
-    /* width: 194px; */
-    border-style: solid;
-    border-width: 1px;
-    /* color: white; */
-    padding: 25px 32px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
 }
 
-
-.clear-and-delete-buttons > button:hover {
-    opacity: 0.9;
+.number-button {
+    background-color: #eeeeee;
 }
 
-.clear-and-delete-buttons > button:active {
-    opacity: 1;
+.operator-button, #\=  {
+    background-color: #217C7E;
 }
 
 #clear {
